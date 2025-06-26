@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://libtl.com/sdk.js" data-zone="9491087" data-sdk="show_9491087"></script>
-  </head>
-  <body>
-    <button onclick="showAd()">Show Ad</button>
-    <script>
-      function showAd() {
-        if (typeof show_9491087 === 'function') {
-          show_9491087().then(() => alert('Ad complete')).catch(() => alert('Ad failed'));
-        } else {
-          alert('Ad function not loaded');
-        }
+<head>
+  <script src="https://libtl.com/sdk.js" data-zone="9491087" data-sdk="show_9491087"></script>
+</head>
+<body>
+  <button onclick="showAd()">Test Ad</button>
+  <script>
+    function showAd() {
+      console.log('show_9491087 exists:', typeof show_9491087);
+      if (typeof show_9491087 === 'function') {
+        show_9491087()
+          .then(() => console.log('✅ Ad finished'))
+          .catch(err => console.error('❌ Ad error', err));
+      } else {
+        console.error('✋ Ad function not loaded');
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
 </html>
