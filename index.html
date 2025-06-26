@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://libtl.com/sdk.js" data-zone="9491087" data-sdk="show_9491087"></script>
+  </head>
+  <body>
+    <button onclick="showAd()">Show Ad</button>
+    <script>
+      function showAd() {
+        if (typeof show_9491087 === 'function') {
+          show_9491087().then(() => alert('Ad complete')).catch(() => alert('Ad failed'));
+        } else {
+          alert('Ad function not loaded');
+        }
+      }
+    </script>
+  </body>
+</html>
